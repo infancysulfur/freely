@@ -6,9 +6,10 @@ export interface CalculatorLayoutProps {
   input: ReactNode;
   result: ReactNode;
   details?: ReactNode;
+  guide?: ReactNode;
 }
 
-export function CalculatorLayout({ title, description, input, result, details }: CalculatorLayoutProps) {
+export function CalculatorLayout({ title, description, input, result, details, guide }: CalculatorLayoutProps) {
   return (
     <section className="mx-auto flex w-full max-w-5xl flex-col gap-8 px-6 py-12 sm:py-16">
       <div className="max-w-2xl space-y-4">
@@ -20,6 +21,7 @@ export function CalculatorLayout({ title, description, input, result, details }:
         <div>{result}</div>
       </div>
       {details ? <div>{details}</div> : null}
+      {guide ? <div>{guide}</div> : null}
     </section>
   );
 }

@@ -9,10 +9,12 @@ import { NumberInput } from "@/components/common/number-input";
 import { PercentageInput } from "@/components/common/percentage-input";
 import { ResultCard } from "@/components/common/result-card";
 import { CalculatorLayout } from "@/components/calculators/calculator-layout";
+import { CalculatorGuide } from "@/components/calculators/calculator-guide";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { calculateCompoundInvestment } from "@/lib/calculations/investment";
+import { calculatorGuides } from "@/lib/calculator-guides";
 import { formatCurrency, parseNumberInput } from "@/lib/format";
 
 const schema = z.object({
@@ -91,6 +93,7 @@ export function CompoundCalculator() {
           </Alert>
         </div>
       }
+      guide={<CalculatorGuide {...calculatorGuides.compound} />}
     />
   );
 }

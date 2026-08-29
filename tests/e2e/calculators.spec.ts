@@ -20,6 +20,8 @@ test("compound calculator renders input and result areas", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "복리 계산기" })).toBeVisible();
   await expect(page.getByLabel("초기 투자금")).toBeVisible();
   await expect(page.getByText("예상 최종 자산")).toBeVisible();
+  await expect(page.getByText("복리 계산 방법")).toBeVisible();
+  await expect(page.getByText("자주 묻는 질문")).toBeVisible();
 });
 
 test("fire calculator renders core result and progress", async ({ page }) => {
@@ -29,4 +31,6 @@ test("fire calculator renders core result and progress", async ({ page }) => {
   await expect(page.getByLabel("월 생활비")).toBeVisible();
   await expect(page.getByText("당신의 FIRE 목표자산")).toBeVisible();
   await expect(page.getByText(/현재 FIRE 달성률/)).toBeVisible();
+  await expect(page.getByText("FIRE 목표자산 계산 방법")).toBeVisible();
+  await expect(page.getByText("Q. FIRE란 무엇인가요?")).toBeVisible();
 });

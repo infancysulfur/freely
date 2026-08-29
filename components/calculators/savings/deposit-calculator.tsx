@@ -9,9 +9,11 @@ import { NumberInput } from "@/components/common/number-input";
 import { PercentageInput } from "@/components/common/percentage-input";
 import { ResultCard } from "@/components/common/result-card";
 import { CalculatorLayout } from "@/components/calculators/calculator-layout";
+import { CalculatorGuide } from "@/components/calculators/calculator-guide";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { calculateDeposit } from "@/lib/calculations/savings";
+import { calculatorGuides } from "@/lib/calculator-guides";
 import { formatCurrency, parseNumberInput } from "@/lib/format";
 
 const schema = z.object({
@@ -57,6 +59,7 @@ export function DepositCalculator() {
           criteria={[`세전 이자 ${formatCurrency(result.beforeTaxInterest)}`]}
         />
       }
+      guide={<CalculatorGuide {...calculatorGuides.deposit} />}
     />
   );
 }

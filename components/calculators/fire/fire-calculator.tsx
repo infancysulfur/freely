@@ -13,6 +13,7 @@ import {
   YAxis,
 } from "recharts";
 import { z } from "zod";
+import { CalculatorGuide } from "@/components/calculators/calculator-guide";
 import { CalculatorLayout } from "@/components/calculators/calculator-layout";
 import { CurrencyInput } from "@/components/common/currency-input";
 import { NumberInput } from "@/components/common/number-input";
@@ -23,6 +24,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { calculateFireProgress, calculateFireTarget, simulateFire } from "@/lib/calculations/fire";
+import { calculatorGuides } from "@/lib/calculator-guides";
 import { formatCurrency, formatNumber, parseNumberInput } from "@/lib/format";
 
 const schema = z.object({
@@ -161,6 +163,7 @@ export function FireCalculator() {
           </Alert>
         </div>
       }
+      guide={<CalculatorGuide {...calculatorGuides.fire} />}
     />
   );
 }

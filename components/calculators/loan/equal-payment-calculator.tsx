@@ -5,6 +5,7 @@ import { useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { CalculatorLayout } from "@/components/calculators/calculator-layout";
+import { CalculatorGuide } from "@/components/calculators/calculator-guide";
 import { CurrencyInput } from "@/components/common/currency-input";
 import { NumberInput } from "@/components/common/number-input";
 import { PercentageInput } from "@/components/common/percentage-input";
@@ -12,6 +13,7 @@ import { ResultCard } from "@/components/common/result-card";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { calculateEqualPaymentLoan } from "@/lib/calculations/loan";
+import { calculatorGuides } from "@/lib/calculator-guides";
 import { formatCurrency, parseNumberInput } from "@/lib/format";
 
 const schema = z.object({
@@ -65,6 +67,7 @@ export function EqualPaymentCalculator() {
           ]}
         />
       }
+      guide={<CalculatorGuide {...calculatorGuides.equalPaymentLoan} />}
     />
   );
 }
