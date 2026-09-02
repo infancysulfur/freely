@@ -36,7 +36,7 @@ export function Header() {
   return (
     <header className="border-b bg-background">
       <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-6">
-        <Link className="text-lg font-semibold" href="/">
+        <Link className="text-lg font-bold text-black" href="/">
           FREELY
         </Link>
         <nav

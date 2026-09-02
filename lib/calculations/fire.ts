@@ -38,6 +38,42 @@ export function calculateFireProgress(currentAsset: number, targetAsset: number)
   return Math.min((currentAsset / targetAsset) * 100, 100);
 }
 
+export function formatMonthsToYearsAndMonths(months: number | null): string {
+  if (months === null || months <= 0) return "-";
+
+  const years = Math.floor(months / 12);
+  const remainingMonths = months % 12;
+
+  if (years === 0) return `${remainingMonths}개월`;
+  if (remainingMonths === 0) return `${years}년`;
+
+  return `${years}년 ${remainingMonths}개월`;
+}
+
+export function calculateTotalContributions(
+  currentAsset: number,
+  monthlyInvestment: number,
+  monthsToFire: number | null,
+): number {
+  const months = monthsToFire ?? 12 * 100;
+  return currentAsset + monthlyInvestment * months;
+}
+
+export function calculateTotalInvestmentReturn(
+  currentAsset: number,
+  monthlyInvestment: number,
+  simulation: FireSimulationResult,
+): number {
+  if (simulation.points.length === 0) return 0;
+
+  const totalContributions =
+    currentAsset + monthlyInvestment * simulation.points.length;
+  const finalAsset =
+    simulation.points[simulation.points.length - 1]?.asset ?? 0;
+
+  return Math.max(finalAsset - totalContributions, 0);
+}
+
 export function simulateFire(input: FireSimulationInput): FireSimulationResult {
   assertPositive(input.currentAge, "currentAge");
   assertNonNegative(input.currentAsset, "currentAsset");
