@@ -3,7 +3,7 @@ import "./globals.css";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 
-const baseUrl = "https://freely-78hbdkt9d-infancysulfurs-projects.vercel.app";
+const baseUrl = "https://freely-xi.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),

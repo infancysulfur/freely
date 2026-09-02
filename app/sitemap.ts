@@ -15,7 +15,7 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://freely-78hbdkt9d-infancysulfurs-projects.vercel.app";
+  const baseUrl = "https://freely-xi.vercel.app";
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
