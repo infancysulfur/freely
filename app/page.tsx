@@ -17,19 +17,23 @@ export const metadata: Metadata = {
 const calculatorGroups = [
   {
     name: "투자 계산기",
-    description: "복리, 목표금액, 배당금 계산을 준비합니다.",
+    description: "복리, 목표금액, 배당금 계산을 합니다.",
+    href: "/calculators/investment/compound",
   },
   {
     name: "대출 계산기",
-    description: "상환 방식별 월 상환금 계산을 준비합니다.",
+    description: "상환 방식별 월 상환금을 계산합니다.",
+    href: "/calculators/loan/equal-payment",
   },
   {
     name: "저축 계산기",
-    description: "예금과 적금 만기 금액 계산을 준비합니다.",
+    description: "예금과 적금 만기 금액을 계산합니다.",
+    href: "/calculators/savings/deposit",
   },
   {
     name: "FIRE 계산기",
-    description: "경제적 자유에 필요한 자산 계산을 준비합니다.",
+    description: "경제적 자유에 필요한 자산을 계산합니다.",
+    href: "/calculators/fire",
   },
 ];
 
@@ -54,12 +58,14 @@ export default function HomePage() {
         <h2 className="text-2xl font-semibold">금융 계산기</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {calculatorGroups.map((group) => (
-            <Card key={group.name}>
-              <CardHeader>
-                <CardTitle>{group.name}</CardTitle>
-                <CardDescription>{group.description}</CardDescription>
-              </CardHeader>
-            </Card>
+            <Link key={group.name} href={group.href}>
+              <Card className="h-full transition-colors hover:bg-secondary">
+                <CardHeader>
+                  <CardTitle>{group.name}</CardTitle>
+                  <CardDescription>{group.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
