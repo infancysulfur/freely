@@ -3,9 +3,36 @@ import "./globals.css";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 
+const baseUrl = "https://freely-78hbdkt9d-infancysulfurs-projects.vercel.app";
+
 export const metadata: Metadata = {
-  title: "FREELY",
-  description: "개인의 경제적 자유를 계산하고 계획하는 금융 계산 서비스",
+  metadataBase: new URL(baseUrl),
+  title: {
+    default: "FREELY — 돈을 계산하고 미래를 설계하세요",
+    template: "%s | FREELY",
+  },
+  description:
+    "투자, 대출, 저축, FIRE 계산기를 무료로 사용할 수 있는 개인 금융 계산 서비스입니다.",
+  openGraph: {
+    type: "website",
+    locale: "ko_KR",
+    siteName: "FREELY",
+    title: "FREELY — 돈을 계산하고 미래를 설계하세요",
+    description:
+      "투자, 대출, 저축, FIRE 계산기를 무료로 사용할 수 있는 개인 금융 계산 서비스입니다.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FREELY — 돈을 계산하고 미래를 설계하세요",
+    description:
+      "투자, 대출, 저축, FIRE 계산기를 무료로 사용할 수 있는 개인 금융 계산 서비스입니다.",
+  },
+  alternates: {
+    canonical: baseUrl,
+  },
+  verification: {
+    google: "6uLFfC3B9OL70v8Rd99apHHo-Kq5gyhAT-zcnxhdmIU",
+  },
 };
 
 export default function RootLayout({

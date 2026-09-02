@@ -5,7 +5,13 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 
 export const metadata: Metadata = {
   title: "FREELY - 돈을 계산하고 미래를 설계하세요",
-  description: "투자, 대출, 저축, FIRE 목표를 계산하는 개인 금융 서비스입니다.",
+  description:
+    "복리, 대출 상환, 예금/적금 만기, FIRE 목표자산까지. 무료 금융 계산기로 투자와 경제적 자유를 계획하세요.",
+  openGraph: {
+    title: "FREELY — 돈을 계산하고 미래를 설계하세요",
+    description:
+      "복리, 대출 상환, 예금/적금 만기, FIRE 목표자산까지. 무료 금융 계산기로 투자와 경제적 자유를 계획하세요.",
+  },
 };
 
 const calculatorGroups = [

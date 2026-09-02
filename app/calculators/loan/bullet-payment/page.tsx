@@ -2,8 +2,14 @@ import type { Metadata } from "next";
 import { BulletPaymentCalculator } from "@/components/calculators/loan/bullet-payment-calculator";
 
 export const metadata: Metadata = {
-  title: "만기일시상환 계산기 | FREELY",
-  description: "만기일시상환 방식의 월 이자와 총 상환금을 계산합니다.",
+  title: "만기일시상환 대출 계산기",
+  description:
+    "기간 중 이자만 납부하고 만기에 원금을 갚는 만기일시상환 방식의 월 이자와 총 상환금을 계산합니다.",
+  openGraph: {
+    title: "만기일시상환 대출 계산기 | FREELY",
+    description:
+      "기간 중 이자만 납부하고 만기에 원금을 갚는 만기일시상환 방식의 월 이자와 총 상환금을 계산합니다.",
+  },
 };
 
 export default function BulletPaymentPage() {

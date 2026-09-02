@@ -4,8 +4,14 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 import { Separator } from "@/components/ui/separator";
 
 export const metadata: Metadata = {
-  title: "금융 계산기 | FREELY",
-  description: "투자, 대출, 저축, FIRE 계산기를 한곳에서 확인하세요.",
+  title: "금융 계산기 목록",
+  description:
+    "복리 계산, 대출 상환, 예금/적금, FIRE 계산까지. 필요한 금융 계산기를 찾아보세요.",
+  openGraph: {
+    title: "금융 계산기 | FREELY",
+    description:
+      "복리 계산, 대출 상환, 예금/적금, FIRE 계산까지. 필요한 금융 계산기를 찾아보세요.",
+  },
 };
 
 const calculatorSections = [
